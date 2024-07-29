@@ -24,11 +24,11 @@
 					{/each}
 				</div>
 			</div>
-			<div class="text-gray-300" in:fade={{ duration: 300, delay: 600 }}>
-				@isaxk - Casual Web Dev
+			<div class="text-gray-300 flex flex-col sm:flex-row" in:fade={{ duration: 300, delay: 600 }}>
+				<div>@isaxk - </div>Casual Web Dev
 			</div>
 		</div>
-		<div class="w-40">
+		<div class="w-32 sm:w-40">
 			<img
 				src="/favicon.png"
 				alt="My cat"
