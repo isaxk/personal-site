@@ -24,7 +24,7 @@
 					{/each}
 				</div>
 			</div>
-			<div class="text-gray-300 flex flex-col sm:flex-row" in:fade={{ duration: 300, delay: 600 }}>
+			<div class="text-gray-300 flex flex-col sm:flex-row sm:gap-1" in:fade={{ duration: 300, delay: 600 }}>
 				<div>@isaxk - </div>Casual Web Dev
 			</div>
 		</div>
