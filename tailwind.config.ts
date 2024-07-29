@@ -1,11 +1,16 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
 
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ["DM Sans", "sans-serif"]
+      }
+    }
   },
 
-  plugins: [require("@tailwindcss/typography")]
+  plugins: [typography()]
 } as Config;
