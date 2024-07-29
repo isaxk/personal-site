@@ -3,7 +3,7 @@
 </script>
 
 
-<main class="max-w-screen-md m-auto px-10">
+<main class="max-w-screen-md m-auto px-5">
     <slot />
 </main>
 
