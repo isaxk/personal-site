@@ -1,3 +1,3 @@
-<div class="flex flex-col gap-4 mb-10">
+<div class="flex flex-col gap-10 mb-10">
     <slot />
 </div>

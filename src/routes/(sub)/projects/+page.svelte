@@ -3,37 +3,51 @@
   import Title from "../Title.svelte";
   import AnimListItem from "../AnimListItem.svelte";
   import AnimList from "../AnimList.svelte";
+  import YTDeskThum from "../../../assets/ytdesk.png";
+  import FlagsThum from "../../../assets/quickflags.png";
+  import FlashaThum from "../../../assets/flasha.png";
 
   let projects = [
     {
       name: "YT Desk",
       url: "https://ytdesk.isaxk.com",
+      img: YTDeskThum,
       desc: "Youtube and YT Music supercharged",
     },
     {
       name: "Quick Flags",
       url: "https://flags.isaxk.com",
+      img: FlagsThum,
       desc: "Fast paced flag knowledge game",
     },
     {
       name: "Flasha",
       url: "https://flasha.isaxk.com",
+      img: FlashaThum,
       desc: "Stuningly simple flashcards",
     },
   ];
   let github = "isaxk";
 </script>
 
-<Title>Project</Title>
+<Title>Project Showcase:</Title>
 <AnimList>
   {#each projects as project, i}
     <AnimListItem {i}>
       <a
         href={project.url}
-        class="py-2 rounded-md hover:underline transition-all"
+        class="flex flex-col sm:flex-row w-64 sm:w-full gap-2 sm:gap-5 rounded-md hover:underline transition-all my-2 bg-neutral-800"
       >
-        <div class="text-xl font-medium">{project.name}</div>
-        <div class="text-sm font-light text-zinc-400">{project.desc}</div>
+          <img
+            src={project.img}
+            alt="Thumbnail"
+            class="rounded-t h-40 w-full sm:w-64 object-cover object-center"
+          />
+
+        <div class="px-4 sm:px-4 py-2 sm:py-4">
+          <div class="text-xl sm:text-2xl font-medium">{project.name}</div>
+          <div class="text-sm sm:text-md font-light text-zinc-400">{project.desc}</div>
+        </div>
       </a>
     </AnimListItem>
   {/each}
