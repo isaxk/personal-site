@@ -1,22 +1,23 @@
 <script lang="ts">
-	import Header from "$lib/components/Header.svelte";
-	import Projects from "$lib/components/Projects.svelte";
-	import { onMount } from "svelte";
-
-	let visible: boolean = false;
-	onMount(() => {
-		visible = true;
-	});
+  import Header from "$lib/components/Header.svelte";
+  import Projects from "$lib/components/Projects.svelte";
+  import { onMount } from "svelte";
+  import { fade, fly } from "svelte/transition";
+  let visible = false;
+  onMount(() => (visible = true));
 </script>
 
-<svelte:head>
-	<title>Isaac (isaxk) - Casual Web Dev</title>
-</svelte:head>
+<Header myName="Isaac" />
 
 {#key visible}
-	<Header myName="Isaac" />
+  <div class="flex gap-5" in:fade={{duration: 250, delay: 300 }}>
+    <a href="/projects" class="hover:underline">Project Showcase</a>
+    <a href="/contact" class="hover:underline">Contact</a>
+    <a href="https://github.com/isaxk" class="hover:underline">GitHub</a>
+  </div>
+{/key}
 
-	<Projects
+<!-- <Projects
 		projects={[
 			{
 				name: "YT Desk",
@@ -35,5 +36,4 @@
 			},
 		]}
 		github="isaxk"
-	/>
-{/key}
+	/> -->
