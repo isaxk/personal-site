@@ -12,6 +12,7 @@
 	import Electron from 'svelte-simples/Electron.svelte';
 	import Github from 'svelte-simples/Github.svelte';
 	import Discord from 'svelte-simples/Discord.svelte';
+	import { ArrowRight } from 'lucide-svelte';
 
 	let { data } = $props();
 
@@ -35,13 +36,13 @@
 </script>
 
 <AnimationMounter>
-	<div class="flex w-full flex-col items-center gap-16 px-4 pb-16">
+	<div class="flex w-full flex-col items-center gap-16 pb-16">
 		<div
-			class="flex h-[50vh] w-full max-w-screen-sm flex-col-reverse items-center gap-10 pt-16 text-center sm:flex-row sm:gap-0 sm:text-left"
+			class="flex h-[50vh] w-full flex-col-reverse items-center gap-10 pt-16 text-center sm:flex-row sm:gap-0 sm:text-left"
 		>
 			<div class="flex-grow">
-				<div class="flex gap-3 text-6xl font-light">
-					<div in:fade={{ duration: 200 }}>Hey, I'm</div>
+				<div class="flex gap-3 text-6xl">
+					<div class="text-zinc-300" in:fade={{ duration: 200 }}>Hey, I'm</div>
 
 					<div class="flex gap-[1px] font-medium">
 						{#each 'Isaac'.split('') as letter, i}
@@ -72,17 +73,25 @@
 				/>
 			</div>
 		</div>
-		<div class="w-full max-w-screen-sm">
-			<div
-				class="min-h-20 rounded-lg border border-zinc-600 bg-zinc-700 p-4 drop-shadow-xl"
+
+		<div class="w-full">
+			<a
+				href="/about"
+				class="group relative block min-h-20 rounded-lg border border-zinc-600 bg-zinc-800 p-4 drop-shadow-xl transition-all hover:-rotate-[0.3deg] hover:scale-[1.01]"
 				in:fade={{ duration: 200, delay: 350 }}
 			>
 				I'm Isaac, an aspiring young developer. I have a passion in creating pleasant, simple to
 				use, user interfaces and like to focus on the small details that make a project feel
 				polished.
-			</div>
+				<div
+					class="text-sh absolute -bottom-5 -right-2 flex items-center rounded border border-zinc-600 bg-zinc-700 p-2 text-sm text-zinc-400 transition-all group-hover:rotate-[1deg] group-hover:text-white md:-right-4"
+				>
+					More about me <ArrowRight size={14} />
+				</div>
+			</a>
 		</div>
-		<div class="w-full max-w-screen-sm">
+
+		<!-- <div class="w-full max-w-screen-sm">
 			<div class="flex" in:fade={{ duration: 200, delay: 400 }}>
 				<div class="text-2xl font-medium">Skills/stacks/technologies:</div>
 			</div>
@@ -98,6 +107,7 @@
 				<Technology i={6} name="Electron" color="#47848F" Icon={Electron} />
 			</div>
 		</div>
+
 		<div class="w-full max-w-screen-sm" in:fade={{ duration: 200, delay: 550 }}>
 			<div class="flex">
 				<div class="text-2xl font-medium">Projects:</div>
@@ -111,6 +121,7 @@
 				{/each}
 			</div>
 		</div>
+
 		<div class="w-full max-w-screen-sm" in:fade={{ duration: 200, delay: 550 }}>
 			<div class="flex">
 				<div class="text-2xl font-medium">Blog:</div>
@@ -123,6 +134,6 @@
 					</div>
 				{/each}
 			</div>
-		</div>
+		</div> -->
 	</div>
 </AnimationMounter>
