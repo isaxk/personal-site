@@ -13,6 +13,7 @@
 	import Github from 'svelte-simples/Github.svelte';
 	import Discord from 'svelte-simples/Discord.svelte';
 	import { ArrowRight } from 'lucide-svelte';
+	import { beforeNavigate } from '$app/navigation';
 
 	let { data } = $props();
 
@@ -41,7 +42,7 @@
 			class="flex h-[50vh] w-full flex-col-reverse items-center gap-10 pt-16 text-center sm:flex-row sm:gap-0 sm:text-left"
 		>
 			<div class="flex-grow">
-				<div class="flex gap-3 text-6xl">
+				<div class="flex gap-3 text-5xl sm:text-6xl">
 					<div class="text-zinc-300" in:fade={{ duration: 200 }}>Hey, I'm</div>
 
 					<div class="flex gap-[1px] font-medium">
