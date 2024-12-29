@@ -26,10 +26,14 @@
 						<a href="/about" class="text-zinc-300 transition-all hover:text-white hover:underline"
 							>About</a
 						>
-						<a href="https://" class="text-zinc-300 transition-all hover:text-white hover:underline"
+						<a
+							href="https://github.com/isaxk"
+							class="text-zinc-300 transition-all hover:text-white hover:underline"
 							><Github size={22} /></a
 						>
-						<a href="https://" class="text-zinc-300 transition-all hover:text-white hover:underline"
+						<a
+							href="https://discordapp.com/users/988006561442041886"
+							class="text-zinc-300 transition-all hover:text-white hover:underline"
 							><Discord size={22} /></a
 						>
 					</div>
