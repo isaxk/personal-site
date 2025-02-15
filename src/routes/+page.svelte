@@ -14,6 +14,7 @@
 	import Discord from 'svelte-simples/Discord.svelte';
 	import { ArrowRight } from 'lucide-svelte';
 	import { beforeNavigate } from '$app/navigation';
+	import { navigating } from '$app/state';
 
 	let { data } = $props();
 
@@ -65,12 +66,12 @@
 					<a href="https://discordapp.com/users/988006561442041886"><Discord size={22} /></a>
 				</div>
 			</div>
-			<div class="h-40 w-40">
+			<div class="h-40 w-40" in:fade={{ duration: 200, delay: 300 }}>
 				<img
+					style="view-transition-name: profile;"
 					src="/profile.jpeg"
 					class="w-40 rounded-full"
 					alt=""
-					in:fade={{ duration: 200, delay: 300 }}
 				/>
 			</div>
 		</div>

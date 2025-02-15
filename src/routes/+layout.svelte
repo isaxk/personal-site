@@ -3,7 +3,20 @@
 	import Discord from 'svelte-simples/Discord.svelte';
 	import '../app.css';
 	import { fade } from 'svelte/transition';
+	import { onNavigate } from '$app/navigation';
+
 	let { children, data } = $props();
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <div class="flex w-full justify-center">
@@ -16,7 +29,12 @@
 				>
 					<div class="flex flex-grow">
 						<a href="/">
-							<img src="/profile.jpeg" class="h-10 w-10 rounded-full" alt="" />
+							<img
+								style="view-transition-name: profile;"
+								src="/profile.jpeg"
+								class="h-10 w-10 rounded-full"
+								alt=""
+							/>
 						</a>
 					</div>
 					<div class="flex gap-4">
@@ -41,11 +59,9 @@
 			{/if}
 		</div>
 
-		{#key data.url}
-			<div in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
-				{@render children()}
-			</div>
-		{/key}
+		<div>
+			{@render children()}
+		</div>
 	</div>
 </div>
 
