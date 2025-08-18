@@ -12,7 +12,7 @@
 	import Electron from 'svelte-simples/Electron.svelte';
 	import Github from 'svelte-simples/Github.svelte';
 	import Discord from 'svelte-simples/Discord.svelte';
-	import { ArrowRight } from 'lucide-svelte';
+	import { ArrowRight, ChevronRight } from 'lucide-svelte';
 	import { beforeNavigate } from '$app/navigation';
 	import { navigating } from '$app/state';
 
@@ -20,19 +20,19 @@
 
 	const projects = [
 		{
-			name: 'StageLog',
-			desc: 'Log book app (PWA) for theatre lovers',
-			href: 'https://stagelog.isaxk.com'
+			name: 'Dialock',
+			desc: 'Simple, secure diary',
+			href: 'https://dialock.isaxk.com'
+		},
+		{
+			name: 'WhenIsMyTrain?',
+			desc: 'Live uk train departures, with push notifications.',
+			href: 'https://train.isaxk.com'
 		},
 		{
 			name: 'QuickFlags',
 			desc: 'Simple flag based recall game.',
 			href: 'https://flags.isaxk.com'
-		},
-		{
-			name: 'YT Desk',
-			desc: 'Youtube & Youtube Music Desktop wrapper with extra qol features.',
-			href: 'https://ytdesk.isaxk.com'
 		}
 	];
 </script>
@@ -55,7 +55,7 @@
 					</div>
 				</div>
 				<div class="pt-2 text-lg font-light text-zinc-300" in:fade={{ duration: 200, delay: 200 }}>
-					Aspiring young web developer
+					Casual web developer
 				</div>
 
 				<div
@@ -76,7 +76,7 @@
 			</div>
 		</div>
 
-		<div class="w-full">
+		<!-- <div class="w-full">
 			<a
 				href="/about"
 				class="group relative block min-h-20 rounded-lg border border-zinc-600 bg-zinc-800 p-4 drop-shadow-xl transition-all hover:-rotate-[0.3deg] hover:scale-[1.01]"
@@ -91,7 +91,7 @@
 					More about me <ArrowRight size={14} />
 				</div>
 			</a>
-		</div>
+		</div> -->
 
 		<!-- <div class="w-full max-w-screen-sm">
 			<div class="flex" in:fade={{ duration: 200, delay: 400 }}>
@@ -108,23 +108,33 @@
 				<Technology i={5} name="React" color="#61DAFB" Icon={React} />
 				<Technology i={6} name="Electron" color="#47848F" Icon={Electron} />
 			</div>
-		</div>
+		</div> -->
 
-		<div class="w-full max-w-screen-sm" in:fade={{ duration: 200, delay: 550 }}>
+		<div class="w-full max-w-screen-md" in:fade={{ duration: 200, delay: 550 }}>
 			<div class="flex">
 				<div class="text-2xl font-medium">Projects:</div>
 			</div>
 			<div class="flex flex-col gap-2 py-4">
 				{#each projects as project, i}
-					<div>
-						<a class="text-lg font-medium underline" href={project.href}>{project.name}</a>
-						<div class="text-sm font-light text-zinc-300">{project.desc}</div>
+					<div class="group flex items-center gap-2">
+						<div class="w-5">
+							<ChevronRight
+								class="transition-all duration-300 group-hover:translate-x-0.5"
+								size={16}
+							/>
+						</div>
+						<div>
+							<a class="text-lg font-medium group-hover:underline" href={project.href}
+								>{project.name}</a
+							>
+							<div class="text-sm font-light text-zinc-300">{project.desc}</div>
+						</div>
 					</div>
 				{/each}
 			</div>
 		</div>
 
-		<div class="w-full max-w-screen-sm" in:fade={{ duration: 200, delay: 550 }}>
+		<!-- <div class="w-full max-w-screen-sm" in:fade={{ duration: 200, delay: 550 }}>
 			<div class="flex">
 				<div class="text-2xl font-medium">Blog:</div>
 			</div>
