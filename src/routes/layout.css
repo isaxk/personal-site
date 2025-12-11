@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+:root {
+    --color-background: #fffefa;
+    --color-foreground: #000;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #121212;
+        --color-foreground:#f4f4f5;
+    }
+}
+
+@theme {
+    --color-background: var(--color-background);
+    --color-text: var(--color-text);
+    --default-font-family: 'DM Sans', sans-serif;
+}
