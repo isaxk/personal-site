@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import projects from '$lib/data/projects.json';
-	import profile from '$lib/assets/profile.jpeg';
+	import profile from '$lib/assets/profile.png';
 </script>
 
 <svelte:head>
