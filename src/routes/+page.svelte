@@ -22,7 +22,7 @@
 			<img src={profile} alt="Profile Picture" class="w-24 h-24 rounded-full" />
 		</div>
 		<div>
-			<div class="text-lg font-semibold">Here's some things I've made:</div>
+			<div class="text-lg font-semibold">Projects:</div>
 			<ul class="list-disc pl-4 py-2">
 				{#each projects as project, i (project.url + i)}
 					<a href={project.url} class="group">
