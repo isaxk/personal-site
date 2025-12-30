@@ -8,7 +8,7 @@
 	<title>Isaac - isaxk.com</title>
 </svelte:head>
 
-<div class="h-screen flex items-center px-4">
+<div class="h-screen flex items-center px-4 md:px-0">
 	<div class="w-full">
 		<div class="py-10 flex w-full">
 			<div class="grow">
