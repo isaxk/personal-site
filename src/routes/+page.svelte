@@ -38,7 +38,7 @@
 				{/each}
 			</ul>
 		</div>
-		<div class="pt-10">
+		<!-- <div class="pt-10">
 			<div class="text-lg font-semibold">Blog posts :</div>
 			<ul class="list-disc pl-4 py-2">
 				{#each data.posts as post, i (post.slug)}
@@ -52,6 +52,6 @@
 					</a>
 				{/each}
 			</ul>
-		</div>
+		</div> -->
 	</div>
 </div>
