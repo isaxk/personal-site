@@ -1,0 +1,73 @@
+---
+title: Making PWAs feel like apps (almost)
+description: A guide to making your PWA feels polished.
+date: '2026-2-28'
+categories:
+  - sveltekit
+  - svelte
+published: true
+---
+
+Building native apps is hard. Web developers struggle to make native apps feel polished, even using JavaScript tools like React Native. But PWAs are not easy to perfect either, especially on iOS.
+
+## Should you use PWAs?
+
+PWAs are not perfect for everyone. They work if you want to:
+
+- Use any framework or tools you want, not just React.
+- Not be at the mercy of the App Store or Google Play Store's approval process.
+- Not need to pay the $100/year developer account fee for the iOS App Store, great if you are a hoppyist.
+- Manage your own payments, avoiding the 30% Apple tax.
+
+However, PWAs may not work for you if you need to:
+
+- Access lower level-device APIs like camera or microphone.
+- Have greater control over push notifications, and access to widgets and live activities.
+
+If you have chosen to go with a PWA, the post will help you make it feel great.
+
+## Basic setup
+
+A PWA requires a web app manifest file. The code examples in this post will be from my diary app: Dialock, made with SvelteKit.
+
+```json
+// manifest.json
+{
+	"short_name": "Dialock",
+	"name": "Dialock: Simple secure diary app",
+	"display": "standalone",
+	"icons": [
+		{
+			"src": "/favicon.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"id": "/?source=pwa",
+	"start_url": "/app/?source=pwa",
+	"scope": "/",
+	"background_color": "#2b281b"
+}
+```
+```html
+<!-- app.html -->
+<head>
+    <!-- ... -->
+    <link rel="manifest" href="/manifest.json" />
+</head>
+```
+
+Users will now be able to add the app to their home screen, and it will open in a standalone window.
+
+## Working around the Notch (and Dynamic Island)
+
+By default on iOS, the status bar is displayed with solid color background, that does not respond to the current content of the page. This can be solved with the following meta tags:
+
+```html
+<head>
+    <!-- ... -->
+    <meta name="viewport" content="initial-scale=1, viewport-fit=cover, width=device-width"></meta>
+    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+</head>
+```

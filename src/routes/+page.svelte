@@ -2,6 +2,8 @@
 	import { resolve } from '$app/paths';
 	import projects from '$lib/data/projects.json';
 	import profile from '$lib/assets/profile.png';
+
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -31,6 +33,21 @@
 								{project.title}
 							</div>
 							<div class="text-sm">{project.desc}</div>
+						</li>
+					</a>
+				{/each}
+			</ul>
+		</div>
+		<div class="pt-10">
+			<div class="text-lg font-semibold">Blog posts :</div>
+			<ul class="list-disc pl-4 py-2">
+				{#each data.posts as post, i (post.slug)}
+					<a href={post.slug} class="group">
+						<li>
+							<div class="font-medium underline group-hover:text-foreground/80 transition-all">
+								{post.title}
+							</div>
+							<div class="text-sm">{post.date}</div>
 						</li>
 					</a>
 				{/each}
